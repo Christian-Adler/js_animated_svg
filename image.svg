@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="160"
-   height="60"
-   viewBox="0 0 160 60.000004"
+   width="247.10434"
+   height="189.84686"
+   viewBox="0 0 247.10433 189.84688"
    version="1.1"
    id="svg1"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
-     inkscape:zoom="6.1531384"
-     inkscape:cx="51.599684"
-     inkscape:cy="57.612876"
+     inkscape:zoom="3.0765692"
+     inkscape:cx="-65.820069"
+     inkscape:cy="97.99877"
      inkscape:window-width="3440"
      inkscape:window-height="1417"
      inkscape:window-x="-8"
@@ -59,5 +59,16 @@
          style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.529166"
          x="90.656258"
          y="60.754097">ABC</tspan></text>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#333333;stroke-width:1.99999;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       d="m 18.076354,180.93446 c 0,0 45.814919,-57.20356 76.20825,-52.41759 28.682316,4.51655 26.714616,80.51345 53.489566,69.21439 24.79484,-10.46344 -10.6404,-80.50878 -10.6404,-80.50878 0,0 98.46054,-33.723999 116.75679,0.8688 18.37267,34.73729 -64.70511,98.46397 -64.70511,98.46397"
+       id="pathID"
+       sodipodi:nodetypes="csscsc" />
+    <circle
+       style="fill:#ff4900;fill-opacity:1;stroke:none;stroke-width:1.99937;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="dotID"
+       cx="22.927032"
+       cy="107.33688"
+       r="5.8506727" />
   </g>
 </svg>
