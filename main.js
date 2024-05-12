@@ -1,14 +1,22 @@
 const svg = document.querySelector('#svg');
 const btnChangeText = document.querySelector('#btnChangeText');
 const btnAnimate = document.querySelector('#btnAnimate');
+const rangeAnimationSpeed = document.querySelector('#animationSpeed');
 
 let svgDoc = null;
 
 let path = null;
 let dot = null;
 
+const maxSteps = 10000;
+let stepWidth = 50;
+let step = 0;
+
+let animating = false;
+
 svg.onload = function () {
   console.log('SVG loaded!');
+  if (svgDoc) return;
   svgDoc = svg.contentDocument;
 
   path = svgDoc.querySelector('#pathID');
@@ -23,7 +31,6 @@ btnChangeText.addEventListener('click', (/*e*/) => {
   svgDoc.querySelector('#textID').textContent = "some new value";
 });
 
-let animating = false;
 btnAnimate.addEventListener('click', (/*e*/) => {
   if (!svgDoc)
     return;
@@ -37,6 +44,11 @@ btnAnimate.addEventListener('click', (/*e*/) => {
   }
 });
 
+rangeAnimationSpeed.addEventListener('change', () => {
+  stepWidth = parseInt(rangeAnimationSpeed.value);
+  step = 0;
+});
+
 
 function clear() {
   dot.style.fill = 'none';
@@ -46,16 +58,16 @@ function fill() {
   dot.style.fill = '#f00';
 }
 
-let step = 0;
-const steps = 100;
 
 function animate() {
+  console.log(step);
   const len = path.getTotalLength();
-  const pointOnPath = path.getPointAtLength(len / steps * step);
+  const pointOnPath = path.getPointAtLength(len / maxSteps * step);
   dot.setAttribute('cx', pointOnPath.x);
   dot.setAttribute('cy', pointOnPath.y);
-  step++;
-  if (step > steps) step = 0; // reset
+  step += stepWidth;
+  if (step > maxSteps)
+    step = 0; // reset
 
   if (animating)
     requestAnimationFrame(animate);
