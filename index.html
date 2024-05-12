@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Animated SVG</title>
-    <script src="main.js" defer></script>
+    <script src="performancecounter.mjs" type="module"></script>
+    <script src="main.mjs" type="module"></script>
     <style>
         body {
             font-family: Arial, serif;
@@ -11,10 +12,7 @@
     </style>
 </head>
 <body>
-<button id="btnChangeText">Change text</button>
-<br>
-<button id="btnAnimate">Start animation</button>
-<label for="animationSpeed">Animation speed</label><input type="range" min="1" max="200" value="50" class="slider"
+<label for="animationSpeed">Animation speed</label><input type="range" min="0" max="200" value="0" class="slider"
                                                           id="animationSpeed">
 <br>
 <br>
