@@ -1,1 +1,3 @@
 # js_animated_svg
+
+just some tests for another project...
