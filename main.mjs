@@ -1,9 +1,9 @@
-import {PerformanceCounter} from "./performancecounter.mjs";
+import { PerformanceCounter } from './performancecounter.mjs';
 
 const svg = document.querySelector('#svg');
 const rangeAnimationSpeed = document.querySelector('#animationSpeed');
 
-const idSuffixes = ['procIn', 'zexecIn'];
+const idSuffixes = ['ruleengine_proc.in'];
 const performanceCounters = [];
 
 let animating = false;
@@ -12,8 +12,10 @@ function init() {
   console.log('init');
   if (performanceCounters.length > 0) return;
   const svgDoc = svg.contentDocument;
-  if (!svgDoc)
+  if (!svgDoc) {
     setTimeout(init, 100);
+    return;
+  }
 
   for (const idSuffix of idSuffixes) {
     performanceCounters.push(new PerformanceCounter(idSuffix, svgDoc));
@@ -25,10 +27,9 @@ function init() {
 svg.onload = function () {
   console.log('SVG loaded!');
   init();
-}
+};
 // sometimes svg already loaded -> no onload call
 setTimeout(init, 100);
-
 
 rangeAnimationSpeed.addEventListener('change', () => {
   if (performanceCounters.length === 0)
@@ -47,12 +48,12 @@ rangeAnimationSpeed.addEventListener('change', () => {
       animating = true;
       animate();
     }
-  } else {
+  }
+  else {
     animating = false;
     clear();
   }
 });
-
 
 function clear() {
   for (const performanceCounter of performanceCounters) {
